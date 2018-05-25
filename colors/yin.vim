@@ -34,7 +34,7 @@ let s:palette.gray14 = [250, '#d3d3d3']
 let s:palette.gray15 = [251, '#efefef']
 let s:palette.white = [254, '#f9f9f9']
 
-let s:palette.comments = copy(s:palette.gray03)
+let s:palette.comments = copy(s:palette.gray10)
 
 let s:palette.purple = [62, '#5f5fd7']
 let s:palette.brown = [94, '#875f00']
