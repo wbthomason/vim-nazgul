@@ -1,16 +1,11 @@
-" YinYang - black/white color scheme
-
-if (&background ==# "light" && get(g:, "colors_name", "") ==# "yin")
-    runtime! colors/yang.vim
-    finish
-endif
+" Nazgul - A very gray Vim theme
 
 highlight clear
 
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name = "yin"
+let g:colors_name = "nazgul"
 
 
 let s:palette = {}
