@@ -1,18 +1,10 @@
-Yin-Yang
+Nazgul
 ========
 
-Yin-Yang is a black and white color scheme for Vim and is heavily inspired by
-[preto][] and [base16-grayscale][].
+Nazgul is a lightly changed version of the Yin colorscheme from [yin-yang][]. All credit goes to
+[yin-yang][]; all bugs are due to me.
 
-I liked preto's subtle use of colors in a black/white colorscheme but found the
-contrast too high for my liking, so I created Yin-Yang as a low contrast
-version of preto.
+Nazgul tweaks Yin to be slightly lighter and use better colors for errors, warnings, VC signs, and
+the like.
 
-
-License
--------
-
-Copyright (c) 2016 Pierre-Guy Douyon.  Distributed under the MIT License.
-
-[preto]: https://github.com/ewilazarus/preto
-[base16-grayscale]: https://github.com/chriskempson/base16-vim
+[yin-yang]: https://github.com/pgdouyon/vim-yin-yang
