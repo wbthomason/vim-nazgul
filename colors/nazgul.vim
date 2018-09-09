@@ -98,7 +98,7 @@ call s:hi('SpecialComment', s:palette.comments, [], 'bold')
 
 call s:hi('Title', s:palette.gray07, [], 'bold')
 call s:hi('Todo', s:palette.purple, s:palette.black, '')
-if has("nvim") || has("gui_running")
+if has('nvim') || has('gui_running')
     call s:hi('Comment', s:palette.comments, [], 'italic')
 else
     call s:hi('Comment', s:palette.comments, [], '')
@@ -204,12 +204,15 @@ hi ShadyFg1 guifg=#ebdbb2 ctermfg=223 guibg=NONE ctermbg=NONE
 hi ShadyBg2 guifg=#504945 ctermfg=239 guibg=NONE ctermbg=NONE
 hi ShadyBlue guifg=#83a598 ctermfg=109 guibg=NONE ctermbg=NONE
 hi ShadyBrightBlue guifg=#a5c7ff ctermfg=109 guibg=NONE ctermbg=NONE
+hi ShadyAqua guibg=#8ec07c ctermbg=108
 hi ShadyGray guifg=#928374 ctermfg=245 guibg=NONE ctermbg=NONE
 hi ShadyYellow guifg=#fabd2f ctermfg=214 guibg=NONE ctermbg=NONE
 hi ShadyOrange guifg=#fe8019 ctermfg=208 guibg=NONE ctermbg=NONE
 
 hi! link ALEErrorSign RedSign
 hi! link ALEWarningSign YellowSign
+hi! link ALEStyleErrorSign RedSign
+hi! link ALEStyleWarningSign YellowSign
 hi! link ALEInfoSign BlueSign
 
 hi! link SignifySignAdd GreenSign
@@ -226,6 +229,6 @@ hi! link StartifySpecial ShadyBg2
 hi! link StartifyHeader ShadyOrange
 hi! link StartifyFooter ShadyBg2
 
-hi! link Sneak ShadyBrightBlue
-hi! link SneakLabel ShadyBrightBlue
-hi! link SneakScope ShadyBrightBlue
+hi! link Sneak ShadyAqua
+hi! link SneakLabel ShadyAqua
+hi! link SneakScope ShadyAqua
