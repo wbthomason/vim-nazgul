@@ -232,3 +232,5 @@ hi! link StartifyFooter ShadyBg2
 hi! link Sneak ShadyAqua
 hi! link SneakLabel ShadyAqua
 hi! link SneakScope ShadyAqua
+
+hi! link MatchParen ShadyOrange
