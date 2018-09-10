@@ -150,48 +150,48 @@ call s:hi('DiffAdded', s:palette.green, s:palette.black, '')
 call s:hi('DiffChanged', s:palette.blue, s:palette.black, '')
 call s:hi('DiffRemoved', s:palette.red, s:palette.black, '')
 
-highlight! link Character Constant
-highlight! link Float Number
-highlight! link Boolean Number
+hi! link Character Constant
+hi! link Float Number
+hi! link Boolean Number
 
-highlight! link SignColumn FoldColumn
-highlight! link ColorColumn FoldColumn
-highlight! link CursorColumn CursorLine
+hi! link SignColumn FoldColumn
+hi! link ColorColumn FoldColumn
+hi! link CursorColumn CursorLine
 
-highlight! link Folded LineNr
-highlight! link Conceal Normal
-highlight! link ErrorMsg Error
+hi! link Folded LineNr
+hi! link Conceal Normal
+hi! link ErrorMsg Error
 
-highlight! link Conditional Statement
-highlight! link Repeat Statement
-highlight! link Label Statement
-highlight! link Exception Statement
+hi! link Conditional Statement
+hi! link Repeat Statement
+hi! link Label Statement
+hi! link Exception Statement
 
-highlight! link Include PreProc
-highlight! link Define PreProc
-highlight! link Macro PreProc
-highlight! link PreCondit PreProc
+hi! link Include PreProc
+hi! link Define PreProc
+hi! link Macro PreProc
+hi! link PreCondit PreProc
 
-highlight! link StorageClass Type
-highlight! link Structure Type
-highlight! link Typedef Type
+hi! link StorageClass Type
+hi! link Structure Type
+hi! link Typedef Type
 
-highlight! link SpecialChar Special
-highlight! link Tag Special
-highlight! link Delimiter Special
-highlight! link Debug Special
-highlight! link Question Special
+hi! link SpecialChar Special
+hi! link Tag Special
+hi! link Delimiter Special
+hi! link Debug Special
+hi! link Question Special
 
-highlight! link VisualNOS Visual
-highlight! link TabLine StatusLineNC
-highlight! link TabLineFill StatusLineNC
-highlight! link TabLineSel StatusLine
+hi! link VisualNOS Visual
+hi! link TabLine StatusLineNC
+hi! link TabLineFill StatusLineNC
+hi! link TabLineSel StatusLine
 
-hi ALEError guifg=#cc241d ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#9d0006
+hi ALEError guifg=#ff727b ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#9d0006
 hi ALEWarning guifg=#fabd2f ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#b57614
 hi ALEInfo guifg=#83a598 ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl
 
-hi RedSign guifg=#cc241d ctermfg=124 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
+hi RedSign guifg=#ff727b ctermfg=124 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
 hi YellowSign guifg=#fabd2f ctermfg=214 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
 hi GreenSign guifg=#b8bb26 ctermfg=142 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
 hi BlueSign guifg=#83a598 ctermfg=109 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
