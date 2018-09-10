@@ -234,3 +234,7 @@ hi! link SneakLabel ShadyAqua
 hi! link SneakScope ShadyAqua
 
 hi! link MatchParen ShadyOrange
+
+hi! link DiffAdded GreenSign
+hi! link DiffChanged BlueSign
+hi! link DiffRemoved RedSign
