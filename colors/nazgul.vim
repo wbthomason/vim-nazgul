@@ -238,3 +238,5 @@ hi! link MatchParen ShadyOrange
 hi! link DiffAdded GreenSign
 hi! link DiffChanged BlueSign
 hi! link DiffRemoved RedSign
+
+hi! link SpellBad RedSign
