@@ -86,12 +86,12 @@ call s:hi('Identifier', s:palette.gray08, [], 'none')
 call s:hi('Function', s:palette.gray08, [], '')
 
 call s:hi('Statement', s:palette.gray05, [], 'bold')
-call s:hi('Operator', s:palette.gray15, [], 'none')
-call s:hi('Keyword', s:palette.gray15, [], '')
+call s:hi('Operator', s:palette.gray13, [], 'none')
+call s:hi('Keyword', s:palette.gray13, [], '')
 
 call s:hi('PreProc', s:palette.gray07, [], 'none')
 
-call s:hi('Type', s:palette.gray15, [], 'bold')
+call s:hi('Type', s:palette.gray13, [], 'bold')
 
 call s:hi('Special', s:palette.gray05, [], '')
 call s:hi('SpecialComment', s:palette.comments, [], 'bold')
@@ -197,6 +197,12 @@ hi GreenSign guifg=#b8bb26 ctermfg=142 guibg=#333333 ctermbg=235 gui=NONE cterm=
 hi BlueSign guifg=#83a598 ctermfg=109 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
 hi AquaSign guifg=#8ec07c ctermfg=108 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
 
+hi RedFullSign guifg=#eeeeee ctermfg=124 guibg=#ff727b ctermbg=235 gui=NONE cterm=NONE
+hi YellowFullSign guifg=#eeeeee ctermfg=214 guibg=#fabd2f ctermbg=235 gui=NONE cterm=NONE
+hi GreenFullSign guifg=#eeeeee ctermfg=142 guibg=#b8bb26 ctermbg=235 gui=NONE cterm=NONE
+hi BlueFullSign guifg=#eeeeee ctermfg=109 guibg=#83a598 ctermbg=235 gui=NONE cterm=NONE
+hi AquaFullSign guifg=#eeeeee ctermfg=108 guibg=#8ec07c ctermbg=235 gui=NONE cterm=NONE
+
 hi Todo guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 
 hi ShadyFg3 guifg=#bdae93 ctermfg=248 guibg=NONE ctermbg=NONE
@@ -215,9 +221,9 @@ hi! link ALEStyleErrorSign RedSign
 hi! link ALEStyleWarningSign YellowSign
 hi! link ALEInfoSign BlueSign
 
-hi! link SignifySignAdd GreenSign
-hi! link SignifySignChange AquaSign
-hi! link SignifySignDelete RedSign
+hi! link SignifySignAdd GreenFullSign
+hi! link SignifySignChange AquaFullSign
+hi! link SignifySignDelete RedFullSign
 
 hi! link StartifyBracket ShadyFg3
 hi! link StartifyFile ShadyFg1
