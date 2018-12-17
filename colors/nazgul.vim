@@ -86,12 +86,12 @@ call s:hi('Identifier', s:palette.gray08, [], 'none')
 call s:hi('Function', s:palette.gray08, [], '')
 
 call s:hi('Statement', s:palette.gray05, [], 'bold')
-call s:hi('Operator', s:palette.gray15, [], 'none')
-call s:hi('Keyword', s:palette.gray15, [], '')
+call s:hi('Operator', s:palette.gray13, [], 'none')
+call s:hi('Keyword', s:palette.gray13, [], '')
 
 call s:hi('PreProc', s:palette.gray07, [], 'none')
 
-call s:hi('Type', s:palette.gray15, [], 'bold')
+call s:hi('Type', s:palette.gray13, [], 'bold')
 
 call s:hi('Special', s:palette.gray05, [], '')
 call s:hi('SpecialComment', s:palette.comments, [], 'bold')
