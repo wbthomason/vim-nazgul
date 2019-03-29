@@ -76,7 +76,7 @@ hi Todo guifg=#5f5fd7 guibg=#282828
 hi Comment guifg=#aaaaaa gui=italic
 
 hi LineNr guifg=#666666 guibg=#282828 gui=none
-hi FoldColumn guifg=#8c8c8c guibg=#333333 gui=none
+hi FoldColumn guifg=#8c8c8c guibg=#282828 gui=none
 hi CursorLine guibg=#333333 gui=none
 hi CursorLineNr guifg=#d3d3d3 guibg=#333333 gui=none
 
