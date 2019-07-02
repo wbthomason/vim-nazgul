@@ -162,11 +162,11 @@ hi ALEError guifg=#ff727b ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cte
 hi ALEWarning guifg=#fabd2f ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#b57614
 hi ALEInfo guifg=#83a598 ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl
 
-hi RedSign guifg=#cc241d ctermfg=124 gui=NONE cterm=NONE
-hi YellowSign guifg=#fabd2f ctermfg=214 gui=NONE cterm=NONE
-hi GreenSign guifg=#b8cc26 ctermfg=142 gui=NONE cterm=NONE
-hi BlueSign guifg=#83a5cb ctermfg=109 gui=NONE cterm=NONE
-hi AquaSign guifg=#8ec07c ctermfg=108 gui=NONE cterm=NONE
+hi RedSign guifg=#cc241d ctermfg=124 guibg=#282828 gui=NONE cterm=NONE
+hi YellowSign guifg=#fabd2f ctermfg=214 guibg=#282828 gui=NONE cterm=NONE
+hi GreenSign guifg=#b8cc26 ctermfg=142 guibg=#282828 gui=NONE cterm=NONE
+hi BlueSign guifg=#83a5cb ctermfg=109 guibg=#282828 gui=NONE cterm=NONE
+hi AquaSign guifg=#8ec07c ctermfg=108 guibg=#282828 gui=NONE cterm=NONE
 
 hi RedHover guifg=#cc241d ctermfg=124 gui=NONE cterm=NONE
 hi YellowHover guifg=#fabd2f ctermfg=214 gui=NONE cterm=NONE
