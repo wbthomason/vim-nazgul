@@ -57,6 +57,8 @@ hi Constant guifg=#727272 gui=bold
 hi String guifg=#aaaaaa
 hi Number guifg=#828282
 
+hi NormalFloat guifg=#c9c9c9 guibg=#333333
+
 hi Identifier guifg=#969696 gui=none
 hi Function guifg=#969696
 
@@ -221,5 +223,3 @@ hi! link DiffRemoved RedSign
 hi! link SpellBad RedSign
 hi! link Error RedSign
 hi! link ErrorMsg RedSign
-
-highlight NormalFloat guibg=#515151 guifg=#c9c9c9
