@@ -52,7 +52,7 @@ let g:terminal_color_13 = s:palette.gray12
 let g:terminal_color_14 = s:palette.gray14
 let g:terminal_color_15 = s:palette.white
 
-hi Normal guifg=#c9c9c9 guibg=#282828
+hi Normal guifg=#c9c9c9 guibg=#1a1a1a
 hi Constant guifg=#727272 gui=bold
 hi String guifg=#aaaaaa
 hi Number guifg=#828282
@@ -75,8 +75,8 @@ hi Title guifg=#8c8c8c gui=bold
 hi Todo guifg=#5f5fd7 guibg=#282828
 hi Comment guifg=#aaaaaa gui=italic
 
-hi LineNr guifg=#666666 guibg=#333333 gui=none
-hi FoldColumn guifg=#8c8c8c guibg=#333333 gui=none
+hi LineNr guifg=#666666 guibg=#282828 gui=none
+hi FoldColumn guifg=#8c8c8c guibg=#282828 gui=none
 hi CursorLine guibg=#333333 gui=none
 hi CursorLineNr guifg=#d3d3d3 guibg=#333333 gui=none
 
@@ -84,18 +84,18 @@ hi Visual guifg=#282828 guibg=#828282
 hi Search guifg=#333333 guibg=#b5b5b5 gui=none
 hi IncSearch guifg=#282828 guibg=#8c8c8c gui=bold
 
-hi SpellBad guifg=#870000 guibg=#282828 gui=undercurl
-hi SpellCap guifg=#870000 guibg=#282828 gui=undercurl
-hi SpellLocal guifg=#870000 guibg=#282828 gui=undercurl
-hi SpellRare guifg=#875f00 guibg=#282828 gui=undercurl
+hi SpellBad guifg=#870000 gui=undercurl
+hi SpellCap guifg=#870000 gui=undercurl
+hi SpellLocal guifg=#870000 gui=undercurl
+hi SpellRare guifg=#875f00 gui=undercurl
 
-hi Error guifg=#870000 guibg=#282828 gui=bold
-hi ErrorMsg guifg=#870000 guibg=#282828
-hi WarningMsg guifg=#875f00 guibg=#282828
+hi Error guifg=#870000 gui=bold
+hi ErrorMsg guifg=#870000 
+hi WarningMsg guifg=#875f00 
 hi ModeMsg guifg=#aaaaaa
 hi MoreMsg guifg=#aaaaaa
 
-hi MatchParen guifg=#87005f guibg=#282828
+hi MatchParen guifg=#87005f
 
 hi Cursor guibg=#bfbfbf
 hi Underlined guifg=#969696 gui=underline
@@ -117,9 +117,9 @@ hi DiffAdd guifg=#141414 guibg=#00875f
 hi DiffChange guifg=#141414 guibg=#005f87
 hi DiffDelete guifg=#141414 guibg=#870000
 hi DiffText guifg=#282828 guibg=#00afff
-hi DiffAdded guifg=#00875f guibg=#282828
-hi DiffChanged guifg=#005f87 guibg=#282828
-hi DiffRemoved guifg=#870000 guibg=#282828
+hi DiffAdded guifg=#00875f
+hi DiffChanged guifg=#005f87
+hi DiffRemoved guifg=#870000
 
 hi! link Character Constant
 hi! link Float Number
@@ -162,11 +162,19 @@ hi ALEError guifg=#ff727b ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cte
 hi ALEWarning guifg=#fabd2f ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#b57614
 hi ALEInfo guifg=#83a598 ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl
 
-hi RedSign guifg=#ff727b ctermfg=124 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
-hi YellowSign guifg=#fabd2f ctermfg=214 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
-hi GreenSign guifg=#b8bb26 ctermfg=142 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
-hi BlueSign guifg=#83a598 ctermfg=109 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
-hi AquaSign guifg=#8ec07c ctermfg=108 guibg=#333333 ctermbg=235 gui=NONE cterm=NONE
+hi RedSign guifg=#cc241d ctermfg=124 guibg=#282828 gui=NONE cterm=NONE
+hi YellowSign guifg=#fabd2f ctermfg=214 guibg=#282828 gui=NONE cterm=NONE
+hi GreenSign guifg=#b8cc26 ctermfg=142 guibg=#282828 gui=NONE cterm=NONE
+hi BlueSign guifg=#83a5cb ctermfg=109 guibg=#282828 gui=NONE cterm=NONE
+hi AquaSign guifg=#8ec07c ctermfg=108 guibg=#282828 gui=NONE cterm=NONE
+
+hi RedHover guifg=#cc241d ctermfg=124 gui=NONE cterm=NONE
+hi YellowHover guifg=#fabd2f ctermfg=214 gui=NONE cterm=NONE
+hi OrangeHover guifg=#fd7d2f ctermfg=214 gui=NONE cterm=NONE
+hi GreenHover guifg=#b8cc26 ctermfg=142 gui=NONE cterm=NONE
+hi BlueHover guifg=#83a5cb ctermfg=109 gui=NONE cterm=NONE
+hi AquaHover guifg=#8ec07c ctermfg=108 gui=NONE cterm=NONE
+hi WhiteHover guifg=#ffffff ctermfg=108 gui=NONE cterm=NONE
 
 hi Todo guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui=bold cterm=bold
 
