@@ -213,3 +213,5 @@ hi! link DiffRemoved RedSign
 hi! link SpellBad RedSign
 hi! link Error RedSign
 hi! link ErrorMsg RedSign
+
+highlight NormalFloat guibg=#515151 guifg=#c9c9c9
