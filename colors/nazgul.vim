@@ -211,7 +211,7 @@ hi! link StartifyHeader ShadyOrange
 hi! link StartifyFooter ShadyBg2
 
 hi! link Sneak ShadyAqua
-hi! link SneakLabel ShadyAqua
+hi SneakLabel guifg=#fe8019 ctermfg=208 guibg=#504945 ctermbg=239
 hi! link SneakScope ShadyAqua
 
 hi! link MatchParen ShadyOrange
