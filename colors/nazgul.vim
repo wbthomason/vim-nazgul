@@ -52,7 +52,7 @@ let g:terminal_color_13 = s:palette.gray12
 let g:terminal_color_14 = s:palette.gray14
 let g:terminal_color_15 = s:palette.white
 
-hi Normal guifg=#c9c9c9 guibg=#1a1a1a
+hi Normal guifg=#c9c9c9 guibg=#141414
 hi Constant guifg=#727272 gui=bold
 hi String guifg=#aaaaaa
 hi Number guifg=#828282
@@ -77,10 +77,10 @@ hi Title guifg=#8c8c8c gui=bold
 hi Todo guifg=#5f5fd7 guibg=#282828
 hi Comment guifg=#aaaaaa gui=italic
 
-hi LineNr guifg=#666666 guibg=#282828 gui=none
-hi FoldColumn guifg=#8c8c8c guibg=#282828 gui=none
-hi CursorLine guibg=#333333 gui=none
-hi CursorLineNr guifg=#d3d3d3 guibg=#333333 gui=none
+hi LineNr guifg=#666666 guibg=#141414 gui=none
+hi FoldColumn guifg=#8c8c8c guibg=#141414 gui=none
+hi CursorLine guibg=#282828 gui=none
+hi CursorLineNr guifg=#d3d3d3 guibg=#282828 gui=none
 
 hi Visual guifg=#282828 guibg=#828282
 hi Search guifg=#333333 guibg=#b5b5b5 gui=none
