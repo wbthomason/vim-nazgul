@@ -1,4 +1,18 @@
 " Nazgul - A very gray Vim theme
+if exists('g:nazgul_loaded')
+  finish
+endif
+
+function! s:signify_unloaded(scheme) abort
+  if a:scheme !=# 'nazgul' && exists('g:nazgul_loaded')
+    unlet g:nazgul_loaded
+  endif
+endfunction
+
+augroup nazgul_aucmds
+  au!
+  au ColorScheme * call s:signify_unloaded(expand('<amatch>'))
+augroup END
 
 highlight clear
 
@@ -232,3 +246,5 @@ hi! link CocWarningSign YellowSign
 hi! link CocInfoSign WhiteSign
 hi! CocHintHighlight guifg=#83a5cb gui=undercurl guisp=#83a5cb
 hi! link CocHintSign BlueSign
+
+let g:nazgul_loaded = v:true
