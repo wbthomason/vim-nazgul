@@ -246,5 +246,6 @@ hi! link CocWarningSign YellowSign
 hi! link CocInfoSign WhiteSign
 hi! CocHintHighlight guifg=#83a5cb gui=undercurl guisp=#83a5cb
 hi! link CocHintSign BlueSign
+hi! link TSError Error
 
 let g:nazgul_loaded = v:true
