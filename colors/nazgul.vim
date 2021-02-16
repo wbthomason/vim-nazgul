@@ -238,14 +238,4 @@ hi! link SpellBad RedSign
 hi! link Error RedSign
 hi! link ErrorMsg RedSign
 
-hi! link CocHighlightText AquaHover
-hi! link CocHighlightRead BlueHover
-hi! link CocHighlightWrite GreenHover
-hi! link CocErrorSign RedSign
-hi! link CocWarningSign YellowSign
-hi! link CocInfoSign WhiteSign
-hi! CocHintHighlight guifg=#83a5cb gui=undercurl guisp=#83a5cb
-hi! link CocHintSign BlueSign
-hi! link TSError Error
-
 let g:nazgul_loaded = v:true
