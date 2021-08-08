@@ -238,4 +238,6 @@ hi! link SpellBad RedSign
 hi! link Error RedSign
 hi! link ErrorMsg RedSign
 
+hi YellowFloat guifg=#fabd2f guibg=#181818 gui=NONE cterm=NONE
+
 let g:nazgul_loaded = v:true
