@@ -241,7 +241,12 @@ hi! link ErrorMsg RedSign
 hi YellowFloat guifg=#cccc00 guibg=#181818 gui=NONE cterm=NONE
 
 " gray
-highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+if has('nvim') || v:version >= 800
+  highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+else
+  highlight! CmpItemAbbrDeprecated guibg=NONE gui=underline guifg=#808080
+endif
+
 " blue
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
 highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
@@ -257,4 +262,8 @@ highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
 
-let g:nazgul_loaded = v:true
+if has('nvim') || v:version >= 800
+  let g:nazgul_loaded = v:true
+else
+  let g:nazgul_loaded = 1
+endif
