@@ -238,7 +238,7 @@ hi! link SpellBad RedSign
 hi! link Error RedSign
 hi! link ErrorMsg RedSign
 
-hi YellowFloat guifg=#cccc00 guibg=#181818 gui=NONE cterm=NONE
+hi YellowFloat guifg=#cccc00 guibg=#282828 gui=NONE cterm=NONE
 
 " gray
 if has('nvim') || v:version >= 800
