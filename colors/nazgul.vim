@@ -243,20 +243,33 @@ else
   highlight! CmpItemAbbrDeprecated guibg=NONE gui=underline guifg=#808080
 endif
 
-" blue
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
 highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-" light blue
-highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
-" pink
-highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-" front
+highlight! CmpItemKindClass guibg=NONE guifg=#EE9D28
+" highlight! CmpItemKindConstant guibg=NONE guifg=
+highlight! CmpItemKindConstructor guibg=NONE guifg=#B180D7
+highlight! CmpItemKindEnum guibg=NONE guifg=#EE9D28
+highlight! CmpItemKindEnumMember guibg=NONE guifg=#75BEFF
+highlight! CmpItemKindEvent guibg=NONE guifg=#EE9D28
+highlight! CmpItemKindField guibg=NONE guifg=#75BEFF
+highlight! CmpItemKindFile guibg=NONE guifg=#8ec07c
+highlight! CmpItemKindFolder guibg=NONE guifg=#8ec07c
+highlight! CmpItemKindFunction guibg=NONE guifg=#B180D7
+highlight! CmpItemKindInterface guibg=NONE guifg=#75BEFF
 highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindMethod guibg=NONE guifg=#B180D7
+highlight! CmpItemKindModule guibg=NONE guifg=#fabd2f
+highlight! CmpItemKindNamespace guibg=NONE guifg=#fabd2f
+highlight! CmpItemKindOperator guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindPackage guibg=NONE guifg=#fabd2f
+" highlight! CmpItemKindReference guibg=NONE guifg=
+highlight! CmpItemKindSnippet guibg=NONE guifg=#fe8019
+highlight! CmpItemKindStruct guibg=NONE guifg=#EE9D28
+" highlight! CmpItemKindText guibg=NONE guifg=
+highlight! CmpItemKindTypeParameter guibg=NONE guifg=s:palette.red
+" highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindVariable guibg=NONE guifg=#75BEFF
 
 if has('nvim') || v:version >= 800
   let g:nazgul_loaded = v:true
