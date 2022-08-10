@@ -174,10 +174,6 @@ hi! link TabLine StatusLineNC
 hi! link TabLineFill StatusLineNC
 hi! link TabLineSel StatusLine
 
-hi ALEError guifg=#ff727b ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#9d0006
-hi ALEWarning guifg=#fabd2f ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl guisp=#b57614
-hi ALEInfo guifg=#83a598 ctermfg=NONE guibg=NONE ctermbg=NONE gui=undercurl cterm=undercurl
-
 hi RedSign guifg=#cc241d ctermfg=124 guibg=#282828 gui=NONE cterm=NONE
 hi YellowSign guifg=#fabd2f ctermfg=214 guibg=#282828 gui=NONE cterm=NONE
 hi GreenSign guifg=#b8cc26 ctermfg=142 guibg=#282828 gui=NONE cterm=NONE
