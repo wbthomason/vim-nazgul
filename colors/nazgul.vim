@@ -271,6 +271,8 @@ highlight! CmpItemKindTypeParameter guibg=NONE guifg=s:palette.red
 " highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindVariable guibg=NONE guifg=#75BEFF
 
+highlight! TSParameter gui=italic guifg=#969696
+
 if has('nvim') || v:version >= 800
   let g:nazgul_loaded = v:true
 else
