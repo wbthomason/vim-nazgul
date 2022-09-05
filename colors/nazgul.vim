@@ -71,7 +71,8 @@ hi Constant guifg=#727272 gui=bold
 hi String guifg=#aaaaaa
 hi Number guifg=#828282
 
-hi NormalFloat guifg=#c9c9c9 guibg=#333333
+hi NormalFloat guifg=#c9c9c9 guibg=#141414
+hi FloatBorder guifg=#c9c9c9 guibg=#141414
 
 hi Identifier guifg=#969696 gui=none
 hi Function guifg=#969696
