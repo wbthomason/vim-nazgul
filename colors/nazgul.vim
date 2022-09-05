@@ -71,7 +71,7 @@ hi Constant guifg=#727272 gui=bold
 hi String guifg=#aaaaaa
 hi Number guifg=#828282
 
-hi NormalFloat guifg=#c9c9c9 guibg=#141414
+hi NormalFloat guifg=#c9c9c9 guibg=#1d1d1d
 hi FloatBorder guifg=#c9c9c9 guibg=#141414
 
 hi Identifier guifg=#969696 gui=none
@@ -120,9 +120,9 @@ hi SpecialKey guifg=#666666
 hi NonText guifg=#666666
 hi Directory guifg=#969696
 
-hi Pmenu guifg=#aaaaaa guibg=#5b5b5b gui=none
+hi Pmenu guifg=#aaaaaa guibg=#222222 gui=none
 hi PmenuSbar guifg=#282828 guibg=#efefef gui=none
-hi PmenuSel guifg=#5b5b5b guibg=#aaaaaa
+hi PmenuSel guifg=#5b5b5b guibg=#5b5b5b
 hi PmenuThumb guifg=#5b5b5b guibg=#a0a0a0 gui=none
 
 hi StatusLine guifg=#b5b5b5 guibg=#5b5b5b gui=none
@@ -271,6 +271,7 @@ highlight! CmpItemKindStruct guibg=NONE guifg=#EE9D28
 highlight! CmpItemKindTypeParameter guibg=NONE guifg=s:palette.red
 " highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindVariable guibg=NONE guifg=#75BEFF
+highlight! CmpItemMenu guifg=#bfbfbf gui=italic
 
 highlight! TSParameter gui=italic guifg=#969696
 
