@@ -107,8 +107,8 @@ hi SpellLocal guifg=#870000 gui=undercurl
 hi SpellRare guifg=#875f00 gui=undercurl
 
 hi Error guifg=#870000 gui=bold
-hi ErrorMsg guifg=#870000 
-hi WarningMsg guifg=#875f00 
+hi ErrorMsg guifg=#870000
+hi WarningMsg guifg=#875f00
 hi ModeMsg guifg=#aaaaaa
 hi MoreMsg guifg=#aaaaaa
 
@@ -125,8 +125,8 @@ hi PmenuSbar guifg=#282828 guibg=#efefef gui=none
 hi PmenuSel guifg=#5b5b5b guibg=#5b5b5b
 hi PmenuThumb guifg=#5b5b5b guibg=#a0a0a0 gui=none
 
-hi StatusLine guifg=#b5b5b5 guibg=#5b5b5b gui=none
-hi StatusLineNC guifg=#666666 guibg=#333333 gui=none
+hi StatusLine guifg=#b5b5b5 guibg=#333333 gui=none
+hi StatusLineNC guifg=#666666 guibg=#222222 gui=none
 hi WildMenu guifg=#969696
 hi VertSplit guifg=#5b5b5b guibg=#5b5b5b gui=none
 
@@ -189,17 +189,17 @@ hi BlueHover guifg=#83a5cb ctermfg=109 gui=NONE cterm=NONE
 hi AquaHover guifg=#8ec07c ctermfg=108 gui=NONE cterm=NONE
 hi WhiteHover guifg=#ffffff ctermfg=108 gui=NONE cterm=NONE
 
-hi Todo guifg=#eeeeee ctermfg=255 guibg=NONE ctermbg=NONE gui=bold cterm=bold
+hi Todo guifg=#eeeeee ctermfg=255 gui=bold cterm=bold
 
-hi ShadyFg3 guifg=#bdae93 ctermfg=248 guibg=NONE ctermbg=NONE
-hi ShadyFg1 guifg=#ebdbb2 ctermfg=223 guibg=NONE ctermbg=NONE
-hi ShadyBg2 guifg=#504945 ctermfg=239 guibg=NONE ctermbg=NONE
-hi ShadyBlue guifg=#83a598 ctermfg=109 guibg=NONE ctermbg=NONE
-hi ShadyBrightBlue guifg=#a5c7ff ctermfg=109 guibg=NONE ctermbg=NONE
+hi ShadyFg3 guifg=#bdae93 ctermfg=248
+hi ShadyFg1 guifg=#ebdbb2 ctermfg=223
+hi ShadyBg2 guifg=#504945 ctermfg=239
+hi ShadyBlue guifg=#83a598 ctermfg=109
+hi ShadyBrightBlue guifg=#a5c7ff ctermfg=109
 hi ShadyAqua guibg=#8ec07c ctermbg=108
-hi ShadyGray guifg=#928374 ctermfg=245 guibg=NONE ctermbg=NONE
-hi ShadyYellow guifg=#fabd2f ctermfg=214 guibg=NONE ctermbg=NONE
-hi ShadyOrange guifg=#fe8019 ctermfg=208 guibg=NONE ctermbg=NONE
+hi ShadyGray guifg=#928374 ctermfg=245
+hi ShadyYellow guifg=#fabd2f ctermfg=214
+hi ShadyOrange guifg=#fe8019 ctermfg=208
 
 hi! link ALEErrorSign RedSign
 hi! link ALEWarningSign YellowSign
@@ -214,12 +214,7 @@ hi! link SignifySignDelete RedSign
 hi! link StartifyBracket ShadyFg3
 hi! link StartifyFile ShadyFg1
 hi! link StartifyNumber ShadyBlue
-hi! link StartifyPath ShadyGray
-hi! link StartifySlash ShadyGray
-hi! link StartifySection ShadyYellow
-hi! link StartifySpecial ShadyBg2
-hi! link StartifyHeader ShadyOrange
-hi! link StartifyFooter ShadyBg2
+hi! link StartifyPath Normal
 
 hi! link Sneak ShadyAqua
 hi SneakLabel guifg=#fe8019 ctermfg=208 guibg=#504945 ctermbg=239
@@ -244,33 +239,33 @@ else
   highlight! CmpItemAbbrDeprecated guibg=NONE gui=underline guifg=#808080
 endif
 
-highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-highlight! CmpItemKindClass guibg=NONE guifg=#EE9D28
-" highlight! CmpItemKindConstant guibg=NONE guifg=
-highlight! CmpItemKindConstructor guibg=NONE guifg=#B180D7
-highlight! CmpItemKindEnum guibg=NONE guifg=#EE9D28
-highlight! CmpItemKindEnumMember guibg=NONE guifg=#75BEFF
-highlight! CmpItemKindEvent guibg=NONE guifg=#EE9D28
-highlight! CmpItemKindField guibg=NONE guifg=#75BEFF
-highlight! CmpItemKindFile guibg=NONE guifg=#8ec07c
-highlight! CmpItemKindFolder guibg=NONE guifg=#8ec07c
-highlight! CmpItemKindFunction guibg=NONE guifg=#B180D7
-highlight! CmpItemKindInterface guibg=NONE guifg=#75BEFF
-highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindMethod guibg=NONE guifg=#B180D7
-highlight! CmpItemKindModule guibg=NONE guifg=#fabd2f
-highlight! CmpItemKindNamespace guibg=NONE guifg=#fabd2f
-highlight! CmpItemKindOperator guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindPackage guibg=NONE guifg=#fabd2f
-" highlight! CmpItemKindReference guibg=NONE guifg=
-highlight! CmpItemKindSnippet guibg=NONE guifg=#fe8019
-highlight! CmpItemKindStruct guibg=NONE guifg=#EE9D28
-" highlight! CmpItemKindText guibg=NONE guifg=
-highlight! CmpItemKindTypeParameter guibg=NONE guifg=s:palette.red
-" highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindVariable guibg=NONE guifg=#75BEFF
+highlight! CmpItemAbbrMatch  guifg=#569CD6
+highlight! CmpItemAbbrMatchFuzzy  guifg=#569CD6
+highlight! CmpItemKindClass  guifg=#EE9D28
+" highlight! CmpItemKindConstant  guifg=
+highlight! CmpItemKindConstructor  guifg=#B180D7
+highlight! CmpItemKindEnum  guifg=#EE9D28
+highlight! CmpItemKindEnumMember  guifg=#75BEFF
+highlight! CmpItemKindEvent  guifg=#EE9D28
+highlight! CmpItemKindField  guifg=#75BEFF
+highlight! CmpItemKindFile  guifg=#8ec07c
+highlight! CmpItemKindFolder  guifg=#8ec07c
+highlight! CmpItemKindFunction  guifg=#B180D7
+highlight! CmpItemKindInterface  guifg=#75BEFF
+highlight! CmpItemKindKeyword  guifg=#D4D4D4
+highlight! CmpItemKindMethod  guifg=#B180D7
+highlight! CmpItemKindModule  guifg=#fabd2f
+highlight! CmpItemKindNamespace  guifg=#fabd2f
+highlight! CmpItemKindOperator  guifg=#D4D4D4
+highlight! CmpItemKindProperty  guifg=#D4D4D4
+highlight! CmpItemKindPackage  guifg=#fabd2f
+" highlight! CmpItemKindReference  guifg=
+highlight! CmpItemKindSnippet  guifg=#fe8019
+highlight! CmpItemKindStruct  guifg=#EE9D28
+" highlight! CmpItemKindText  guifg=
+highlight! CmpItemKindTypeParameter  guifg=s:palette.red
+" highlight! CmpItemKindUnit  guifg=#D4D4D4
+highlight! CmpItemKindVariable  guifg=#75BEFF
 highlight! CmpItemMenu guifg=#bfbfbf gui=italic
 
 highlight! TSParameter gui=italic guifg=#969696
