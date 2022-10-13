@@ -270,7 +270,7 @@ highlight! CmpItemMenu guifg=#bfbfbf gui=italic
 
 highlight! TSParameter gui=italic guifg=#969696
 
-highlight! WinSeparator guibg=#141414 guifg=#d3d3d3
+highlight! WinSeparator guibg=#141414 guifg=#c9c9c9
 
 if has('nvim') || v:version >= 800
   let g:nazgul_loaded = v:true
