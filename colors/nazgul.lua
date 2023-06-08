@@ -9,225 +9,238 @@ end
 
 vim.g.colors_name = 'nazgul'
 
-local set_hl = vim.api.nvim_set_hl
+local colors = {
+  { 'Normal', { fg = '#c6c6c6', bg = '#141414' } },
+  { 'Constant', { fg = '#727272', bold = true } },
+  { 'String', { fg = '#aaaaaa' } },
+  { 'Number', { fg = '#828282' } },
+  { 'NormalFloat', { fg = '#c6c6c6', bg = '#1d1d1d' } },
+  { 'FloatBorder', { fg = '#c6c6c6', bg = '#141414' } },
+  { 'Identifier', { fg = '#969696' } },
+  { 'Function', { fg = '#969696' } },
+  { 'Statement', { fg = '#727272', bold = true } },
+  { 'Operator', { fg = '#d0d0d0' } },
+  { 'Keyword', { fg = '#d0d0d0' } },
+  { 'PreProc', { fg = '#8c8c8c' } },
+  { 'Type', { fg = '#c6c6c6', bold = true } },
+  { 'Special', { fg = '#727272' } },
+  { 'SpecialComment', { fg = '#aaaaaa', bold = true } },
+  { 'Title', { fg = '#8c8c8c', bold = true } },
+  { 'Comment', { fg = '#aaaaaa', italic = true } },
+  { 'LineNr', { fg = '#666666', bg = '#141414' } },
+  { 'FoldColumn', { fg = '#8c8c8c', bg = '#141414' } },
+  { 'CursorLine', { bg = '#282828' } },
+  { 'CursorLineNr', { fg = '#d3d3d3', bg = '#282828' } },
+  { 'Visual', { fg = '#282828', bg = '#828282' } },
+  { 'Search', { fg = '#333333', bg = '#b5b5b5' } },
+  { 'IncSearch', { fg = '#282828', bg = '#8c8c8c', bold = true } },
+  { 'SpellBad', { fg = '#870000', undercurl = true } },
+  { 'SpellCap', { fg = '#870000', undercurl = true } },
+  { 'SpellLocal', { fg = '#870000', undercurl = true } },
+  { 'SpellRare', { fg = '#875f00', undercurl = true } },
+  { 'Error', { fg = '#870000', bold = true } },
+  { 'ErrorMsg', { fg = '#870000' } },
+  { 'WarningMsg', { fg = '#875f00' } },
+  { 'ModeMsg', { fg = '#aaaaaa' } },
+  { 'MoreMsg', { fg = '#aaaaaa' } },
+  { 'Cursor', { bg = '#bfbfbf' } },
+  { 'Underlined', { fg = '#969696', underline = true } },
+  { 'SpecialKey', { fg = '#666666' } },
+  { 'NonText', { fg = '#666666' } },
+  { 'Directory', { fg = '#969696' } },
+  { 'Pmenu', { fg = '#aaaaaa', bg = '#222222' } },
+  { 'PmenuSbar', { fg = '#282828', bg = '#efefef' } },
+  { 'PmenuSel', { fg = '#5b5b5b', bg = '#5b5b5b' } },
+  { 'PmenuThumb', { fg = '#5b5b5b', bg = '#a0a0a0' } },
+  { 'StatusLine', { fg = '#b5b5b5', bg = '#333333' } },
+  { 'StatusLineNC', { fg = '#666666', bg = '#222222' } },
+  { 'WildMenu', { fg = '#969696' } },
+  { 'VertSplit', { fg = '#5b5b5b', bg = '#5b5b5b' } },
+  { 'DiffAdd', { fg = '#141414', bg = '#00875f' } },
+  { 'DiffChange', { fg = '#141414', bg = '#005f87' } },
+  { 'DiffDelete', { fg = '#141414', bg = '#870000' } },
+  { 'DiffText', { fg = '#282828', bg = '#00afff' } },
+  { 'DiffAdded', { fg = '#00875f' } },
+  { 'DiffChanged', { fg = '#005f87' } },
+  { 'DiffRemoved', { fg = '#870000' } },
+  { 'Character', { link = 'Constant' } },
+  { 'Float', { link = 'Number' } },
+  { 'Boolean', { link = 'Number' } },
+  { 'SignColumn', { link = 'FoldColumn' } },
+  { 'ColorColumn', { link = 'FoldColumn' } },
+  { 'CursorColumn', { link = 'CursorLine' } },
+  { 'Folded', { link = 'LineNr' } },
+  { 'Conceal', { link = 'Normal' } },
+  { 'ErrorMsg', { link = 'Error' } },
+  { 'Conditional', { link = 'Statement' } },
+  { 'Repeat', { link = 'Statement' } },
+  { 'Label', { link = 'Statement' } },
+  { 'Exception', { link = 'Statement' } },
+  { 'Include', { link = 'PreProc' } },
+  { 'Define', { link = 'PreProc' } },
+  { 'Macro', { link = 'PreProc' } },
+  { 'PreCondit', { link = 'PreProc' } },
+  { 'StorageClass', { link = 'Type' } },
+  { 'Structure', { link = 'Type' } },
+  { 'Typedef', { link = 'Type' } },
+  { 'SpecialChar', { link = 'Special' } },
+  { 'Tag', { link = 'Special' } },
+  { 'Delimiter', { link = 'Special' } },
+  { 'Debug', { link = 'Special' } },
+  { 'Question', { link = 'Special' } },
+  { 'VisualNOS', { link = 'Visual' } },
+  { 'TabLine', { link = 'StatusLineNC' } },
+  { 'TabLineFill', { link = 'StatusLineNC' } },
+  { 'TabLineSel', { link = 'StatusLine' } },
+  { 'RedSign', { fg = '#cc241d', bg = '#141414' } },
+  { 'YellowSign', { fg = '#fabd2f', bg = '#141414' } },
+  { 'GreenSign', { fg = '#b8cc26', bg = '#141414' } },
+  { 'BlueSign', { fg = '#83a5cb', bg = '#141414' } },
+  { 'AquaSign', { fg = '#8ec07c', bg = '#141414' } },
+  { 'RedHover', { fg = '#aa241d' } },
+  { 'YellowHover', { fg = '#d89b0d' } },
+  { 'OrangeHover', { fg = '#fd7d2f' } },
+  { 'GreenHover', { fg = '#b8cc26' } },
+  { 'BlueHover', { fg = '#83a5cb' } },
+  { 'AquaHover', { fg = '#8ec07c' } },
+  { 'WhiteHover', { fg = '#ffffff' } },
+  { 'Todo', { fg = '#eaeaea', bold = true } },
+  { 'MatchParen', { link = 'Todo' } },
+  { 'DiffAdded', { link = 'GreenSign' } },
+  { 'DiffChanged', { link = 'BlueSign' } },
+  { 'DiffRemoved', { link = 'RedSign' } },
+  { 'SpellBad', { link = 'RedSign' } },
+  { 'Error', { link = 'RedSign' } },
+  { 'ErrorMsg', { link = 'RedSign' } },
+  { 'YellowFloat', { fg = '#cccc00', bg = '#282828' } },
+  { 'CmpItemAbbrDeprecated', { strikethrough = true, fg = '#808080' } },
+  { 'CmpItemAbbrMatch', { fg = '#569CD6' } },
+  { 'CmpItemAbbrMatchFuzzy', { fg = '#569CD6' } },
+  { 'CmpItemKindClass', { fg = '#EE9D28' } },
+  { 'CmpItemKindConstructor', { fg = '#B180D7' } },
+  { 'CmpItemKindEnum', { fg = '#EE9D28' } },
+  { 'CmpItemKindEnumMember', { fg = '#75BEFF' } },
+  { 'CmpItemKindEvent', { fg = '#EE9D28' } },
+  { 'CmpItemKindField', { fg = '#75BEFF' } },
+  { 'CmpItemKindFile', { fg = '#8ec07c' } },
+  { 'CmpItemKindFolder', { fg = '#8ec07c' } },
+  { 'CmpItemKindFunction', { fg = '#B180D7' } },
+  { 'CmpItemKindInterface', { fg = '#75BEFF' } },
+  { 'CmpItemKindKeyword', { fg = '#D4D4D4' } },
+  { 'CmpItemKindMethod', { fg = '#B180D7' } },
+  { 'CmpItemKindModule', { fg = '#fabd2f' } },
+  { 'CmpItemKindNamespace', { fg = '#fabd2f' } },
+  { 'CmpItemKindOperator', { fg = '#D4D4D4' } },
+  { 'CmpItemKindProperty', { fg = '#D4D4D4' } },
+  { 'CmpItemKindPackage', { fg = '#fabd2f' } },
+  { 'CmpItemKindSnippet', { fg = '#fe8019' } },
+  { 'CmpItemKindStruct', { fg = '#EE9D28' } },
+  { 'CmpItemKindTypeParameter', { fg = '#870000' } },
+  { 'CmpItemKindVariable', { fg = '#75BEFF' } },
+  { 'CmpItemMenu', { fg = '#bfbfbf', italic = true } },
+  { 'TSParameter', { italic = true, fg = '#969696' } },
+  { 'DiagnosticError', { link = 'RedHover' } },
+  { 'DiagnosticWarning', { link = 'YellowHover' } },
+  { 'DiagnosticInfo', { link = 'WhiteHover' } },
+  { 'DiagnosticHint', { link = 'BlueHover' } },
+  { 'LspReferenceText', { link = 'Todo' } },
+  { 'LspReferenceRead', { link = 'Todo' } },
+  { 'LspReferenceWrite', { link = 'Todo' } },
+  { 'TSDefinition', { link = 'LspReferenceText' } },
+  { 'TSDefinitionUsage', { link = 'LspReferenceWrite' } },
+  { 'LspFloatWinBorder', { link = 'IndentBlanklineChar' } },
+  { 'DiagnosticUnderlineError', { sp = '#aa241d', underline = true } },
+  { 'DiagnosticUnderlineWarn', { sp = '#d89b0d', underline = true } },
+  { 'DiagnosticUnderlineInfo', { sp = '#ffffff', underline = true } },
+  { 'DiagnosticUnderlineHint', { sp = '#83a5cb', underline = true } },
+  { 'DiagnosticUnnecessary', { sp = '#83a5cb', underline = true, strikethrough = true } },
+  { 'WinSeparator', { bg = '#141414', fg = '#c6c6c6' } },
+  { 'IndentBlanklineContextChar', { fg = '#ffffff' } },
+  -- {'IndentBlanklineContextStart', {fg='#ffffff', underline=true}},
+  { '@comment', { link = 'Comment' } },
+  { '@none', { bg = 'NONE', fg = 'NONE' } },
+  { '@preproc', { link = 'PreProc' } },
+  { '@define', { link = 'Define' } },
+  { '@operator', { link = 'Operator' } },
+  { '@punctuation.delimiter', { link = 'Delimiter' } },
+  { '@punctuation.bracket', { link = 'Delimiter' } },
+  { '@punctuation.special', { link = 'Delimiter' } },
+  { '@string', { link = 'String' } },
+  { '@string.regex', { link = 'String' } },
+  { '@string.escape', { link = 'SpecialChar' } },
+  { '@string.special', { link = 'SpecialChar' } },
+  { '@character', { link = 'Character' } },
+  { '@character.special', { link = 'SpecialChar' } },
+  { '@boolean', { link = 'Boolean' } },
+  { '@number', { link = 'Number' } },
+  { '@float', { link = 'Float' } },
+  { '@function', { link = 'Function' } },
+  { '@function.call', { link = 'Function' } },
+  { '@function.builtin', { link = 'Special' } },
+  { '@function.macro', { link = 'Macro' } },
+  { '@method', { link = 'Function' } },
+  { '@method.call', { link = 'Function' } },
+  { '@constructor', { link = 'Special' } },
+  { '@parameter', { link = 'Identifier' } },
+  { '@keyword', { link = 'Keyword' } },
+  { '@keyword.function', { link = 'Keyword' } },
+  { '@keyword.return', { link = 'Keyword' } },
+  { '@conditional', { link = 'Conditional' } },
+  { '@repeat', { link = 'Repeat' } },
+  { '@debug', { link = 'Debug' } },
+  { '@label', { link = 'Label' } },
+  { '@include', { link = 'Include' } },
+  { '@exception', { link = 'Exception' } },
+  { '@type', { link = 'Type' } },
+  { '@type.builtin', { link = 'Type' } },
+  { '@type.qualifier', { link = 'Type' } },
+  { '@type.definition', { link = 'Typedef' } },
+  { '@storageclass', { link = 'StorageClass' } },
+  { '@attribute', { link = 'PreProc' } },
+  { '@field', { link = 'Identifier' } },
+  { '@property', { link = 'Identifier' } },
+  { '@variable', { link = 'Identifier' } },
+  { '@variable.builtin', { link = 'Special' } },
+  { '@constant', { link = 'Constant' } },
+  { '@constant.builtin', { link = 'Special' } },
+  { '@constant.macro', { link = 'Define' } },
+  { '@namespace', { link = 'Include' } },
+  { '@symbol', { link = 'Identifier' } },
+  { '@text', { link = 'Normal' } },
+  { '@text.title', { link = 'Title' } },
+  { '@text.literal', { link = 'String' } },
+  { '@text.uri', { link = 'Underlined' } },
+  { '@text.math', { link = 'Special' } },
+  { '@text.environment', { link = 'Macro' } },
+  { '@text.environment.name', { link = 'Type' } },
+  { '@text.reference', { link = 'Constant' } },
+  { '@text.todo', { link = 'Todo' } },
+  { '@text.todo.unchecked', { link = 'Todo' } },
+  { '@text.todo.checked', { link = 'Done' } },
+  { '@text.note', { link = 'SpecialComment' } },
+  { '@text.warning', { link = 'WarningMsg' } },
+  { '@text.danger', { link = 'ErrorMsg' } },
+  { '@text.diff.add', { link = 'diffAdded' } },
+  { '@text.diff.delete', { link = 'diffRemoved' } },
+  { '@tag', { link = 'Tag' } },
+  { '@tag.attribute', { link = 'Identifier' } },
+  { '@tag.delimiter', { link = 'Delimiter' } },
+  { '@text.strong', { bold = true } },
+  { '@text.strike', { strikethrough = true } },
+  { '@text.emphasis', { italic = true } },
+  { '@text.underline', { underline = true } },
+  { '@keyword.operator', { link = 'Operator' } },
+}
 
-set_hl(0, 'Normal', { fg = '#c6c6c6', bg = '#141414' })
-set_hl(0, 'Constant', { fg = '#727272', bold = true })
-set_hl(0, 'String', { fg = '#aaaaaa' })
-set_hl(0, 'Number', { fg = '#828282' })
-set_hl(0, 'NormalFloat', { fg = '#c6c6c6', bg = '#1d1d1d' })
-set_hl(0, 'FloatBorder', { fg = '#c6c6c6', bg = '#141414' })
-set_hl(0, 'Identifier', { fg = '#969696' })
-set_hl(0, 'Function', { fg = '#969696' })
-set_hl(0, 'Statement', { fg = '#727272', bold = true })
-set_hl(0, 'Operator', { fg = '#d0d0d0' })
-set_hl(0, 'Keyword', { fg = '#d0d0d0' })
-set_hl(0, 'PreProc', { fg = '#8c8c8c' })
-set_hl(0, 'Type', { fg = '#c6c6c6', bold = true })
-set_hl(0, 'Special', { fg = '#727272' })
-set_hl(0, 'SpecialComment', { fg = '#aaaaaa', bold = true })
-set_hl(0, 'Title', { fg = '#8c8c8c', bold = true })
-set_hl(0, 'Comment', { fg = '#aaaaaa', italic = true })
-set_hl(0, 'LineNr', { fg = '#666666', bg = '#141414' })
-set_hl(0, 'FoldColumn', { fg = '#8c8c8c', bg = '#141414' })
-set_hl(0, 'CursorLine', { bg = '#282828' })
-set_hl(0, 'CursorLineNr', { fg = '#d3d3d3', bg = '#282828' })
-set_hl(0, 'Visual', { fg = '#282828', bg = '#828282' })
-set_hl(0, 'Search', { fg = '#333333', bg = '#b5b5b5' })
-set_hl(0, 'IncSearch', { fg = '#282828', bg = '#8c8c8c', bold = true })
-set_hl(0, 'SpellBad', { fg = '#870000', undercurl = true })
-set_hl(0, 'SpellCap', { fg = '#870000', undercurl = true })
-set_hl(0, 'SpellLocal', { fg = '#870000', undercurl = true })
-set_hl(0, 'SpellRare', { fg = '#875f00', undercurl = true })
-set_hl(0, 'Error', { fg = '#870000', bold = true })
-set_hl(0, 'ErrorMsg', { fg = '#870000' })
-set_hl(0, 'WarningMsg', { fg = '#875f00' })
-set_hl(0, 'ModeMsg', { fg = '#aaaaaa' })
-set_hl(0, 'MoreMsg', { fg = '#aaaaaa' })
-set_hl(0, 'Cursor', { bg = '#bfbfbf' })
-set_hl(0, 'Underlined', { fg = '#969696', underline = true })
-set_hl(0, 'SpecialKey', { fg = '#666666' })
-set_hl(0, 'NonText', { fg = '#666666' })
-set_hl(0, 'Directory', { fg = '#969696' })
-set_hl(0, 'Pmenu', { fg = '#aaaaaa', bg = '#222222' })
-set_hl(0, 'PmenuSbar', { fg = '#282828', bg = '#efefef' })
-set_hl(0, 'PmenuSel', { fg = '#5b5b5b', bg = '#5b5b5b' })
-set_hl(0, 'PmenuThumb', { fg = '#5b5b5b', bg = '#a0a0a0' })
-set_hl(0, 'StatusLine', { fg = '#b5b5b5', bg = '#333333' })
-set_hl(0, 'StatusLineNC', { fg = '#666666', bg = '#222222' })
-set_hl(0, 'WildMenu', { fg = '#969696' })
-set_hl(0, 'VertSplit', { fg = '#5b5b5b', bg = '#5b5b5b' })
-set_hl(0, 'DiffAdd', { fg = '#141414', bg = '#00875f' })
-set_hl(0, 'DiffChange', { fg = '#141414', bg = '#005f87' })
-set_hl(0, 'DiffDelete', { fg = '#141414', bg = '#870000' })
-set_hl(0, 'DiffText', { fg = '#282828', bg = '#00afff' })
-set_hl(0, 'DiffAdded', { fg = '#00875f' })
-set_hl(0, 'DiffChanged', { fg = '#005f87' })
-set_hl(0, 'DiffRemoved', { fg = '#870000' })
-set_hl(0, 'Character', { link = 'Constant' })
-set_hl(0, 'Float', { link = 'Number' })
-set_hl(0, 'Boolean', { link = 'Number' })
-set_hl(0, 'SignColumn', { link = 'FoldColumn' })
-set_hl(0, 'ColorColumn', { link = 'FoldColumn' })
-set_hl(0, 'CursorColumn', { link = 'CursorLine' })
-set_hl(0, 'Folded', { link = 'LineNr' })
-set_hl(0, 'Conceal', { link = 'Normal' })
-set_hl(0, 'ErrorMsg', { link = 'Error' })
-set_hl(0, 'Conditional', { link = 'Statement' })
-set_hl(0, 'Repeat', { link = 'Statement' })
-set_hl(0, 'Label', { link = 'Statement' })
-set_hl(0, 'Exception', { link = 'Statement' })
-set_hl(0, 'Include', { link = 'PreProc' })
-set_hl(0, 'Define', { link = 'PreProc' })
-set_hl(0, 'Macro', { link = 'PreProc' })
-set_hl(0, 'PreCondit', { link = 'PreProc' })
-set_hl(0, 'StorageClass', { link = 'Type' })
-set_hl(0, 'Structure', { link = 'Type' })
-set_hl(0, 'Typedef', { link = 'Type' })
-set_hl(0, 'SpecialChar', { link = 'Special' })
-set_hl(0, 'Tag', { link = 'Special' })
-set_hl(0, 'Delimiter', { link = 'Special' })
-set_hl(0, 'Debug', { link = 'Special' })
-set_hl(0, 'Question', { link = 'Special' })
-set_hl(0, 'VisualNOS', { link = 'Visual' })
-set_hl(0, 'TabLine', { link = 'StatusLineNC' })
-set_hl(0, 'TabLineFill', { link = 'StatusLineNC' })
-set_hl(0, 'TabLineSel', { link = 'StatusLine' })
-set_hl(0, 'RedSign', { fg = '#cc241d', bg = '#141414' })
-set_hl(0, 'YellowSign', { fg = '#fabd2f', bg = '#141414' })
-set_hl(0, 'GreenSign', { fg = '#b8cc26', bg = '#141414' })
-set_hl(0, 'BlueSign', { fg = '#83a5cb', bg = '#141414' })
-set_hl(0, 'AquaSign', { fg = '#8ec07c', bg = '#141414' })
-set_hl(0, 'RedHover', { fg = '#aa241d' })
-set_hl(0, 'YellowHover', { fg = '#d89b0d' })
-set_hl(0, 'OrangeHover', { fg = '#fd7d2f' })
-set_hl(0, 'GreenHover', { fg = '#b8cc26' })
-set_hl(0, 'BlueHover', { fg = '#83a5cb' })
-set_hl(0, 'AquaHover', { fg = '#8ec07c' })
-set_hl(0, 'WhiteHover', { fg = '#ffffff' })
-set_hl(0, 'Todo', { fg = '#eaeaea', bold = true })
-set_hl(0, 'MatchParen', { link = 'Todo' })
-set_hl(0, 'DiffAdded', { link = 'GreenSign' })
-set_hl(0, 'DiffChanged', { link = 'BlueSign' })
-set_hl(0, 'DiffRemoved', { link = 'RedSign' })
-set_hl(0, 'SpellBad', { link = 'RedSign' })
-set_hl(0, 'Error', { link = 'RedSign' })
-set_hl(0, 'ErrorMsg', { link = 'RedSign' })
-set_hl(0, 'YellowFloat', { fg = '#cccc00', bg = '#282828' })
-set_hl(0, 'CmpItemAbbrDeprecated', { strikethrough = true, fg = '#808080' })
-set_hl(0, 'CmpItemAbbrMatch', { fg = '#569CD6' })
-set_hl(0, 'CmpItemAbbrMatchFuzzy', { fg = '#569CD6' })
-set_hl(0, 'CmpItemKindClass', { fg = '#EE9D28' })
-set_hl(0, 'CmpItemKindConstructor', { fg = '#B180D7' })
-set_hl(0, 'CmpItemKindEnum', { fg = '#EE9D28' })
-set_hl(0, 'CmpItemKindEnumMember', { fg = '#75BEFF' })
-set_hl(0, 'CmpItemKindEvent', { fg = '#EE9D28' })
-set_hl(0, 'CmpItemKindField', { fg = '#75BEFF' })
-set_hl(0, 'CmpItemKindFile', { fg = '#8ec07c' })
-set_hl(0, 'CmpItemKindFolder', { fg = '#8ec07c' })
-set_hl(0, 'CmpItemKindFunction', { fg = '#B180D7' })
-set_hl(0, 'CmpItemKindInterface', { fg = '#75BEFF' })
-set_hl(0, 'CmpItemKindKeyword', { fg = '#D4D4D4' })
-set_hl(0, 'CmpItemKindMethod', { fg = '#B180D7' })
-set_hl(0, 'CmpItemKindModule', { fg = '#fabd2f' })
-set_hl(0, 'CmpItemKindNamespace', { fg = '#fabd2f' })
-set_hl(0, 'CmpItemKindOperator', { fg = '#D4D4D4' })
-set_hl(0, 'CmpItemKindProperty', { fg = '#D4D4D4' })
-set_hl(0, 'CmpItemKindPackage', { fg = '#fabd2f' })
-set_hl(0, 'CmpItemKindSnippet', { fg = '#fe8019' })
-set_hl(0, 'CmpItemKindStruct', { fg = '#EE9D28' })
-set_hl(0, 'CmpItemKindTypeParameter', { fg = '#870000' })
-set_hl(0, 'CmpItemKindVariable', { fg = '#75BEFF' })
-set_hl(0, 'CmpItemMenu', { fg = '#bfbfbf', italic = true })
-set_hl(0, 'TSParameter', { italic = true, fg = '#969696' })
-set_hl(0, 'DiagnosticError', { link = 'RedHover' })
-set_hl(0, 'DiagnosticWarning', { link = 'YellowHover' })
-set_hl(0, 'DiagnosticInfo', { link = 'WhiteHover' })
-set_hl(0, 'DiagnosticHint', { link = 'BlueHover' })
-set_hl(0, 'LspReferenceText', { link = 'Todo' })
-set_hl(0, 'LspReferenceRead', { link = 'Todo' })
-set_hl(0, 'LspReferenceWrite', { link = 'Todo' })
-set_hl(0, 'TSDefinition', { link = 'LspReferenceText' })
-set_hl(0, 'TSDefinitionUsage', { link = 'LspReferenceWrite' })
-set_hl(0, 'LspFloatWinBorder', { link = 'IndentBlanklineChar' })
-set_hl(0, 'DiagnosticUnderlineError', { sp = '#aa241d', underline = true })
-set_hl(0, 'DiagnosticUnderlineWarn', { sp = '#d89b0d', underline = true })
-set_hl(0, 'DiagnosticUnderlineInfo', { sp = '#ffffff', underline = true })
-set_hl(0, 'DiagnosticUnderlineHint', { sp = '#83a5cb', underline = true })
-set_hl(0, 'DiagnosticUnnecessary', { sp = '#83a5cb', underline = true, strikethrough = true })
-set_hl(0, 'WinSeparator', { bg = '#141414', fg = '#c6c6c6' })
-set_hl(0, 'IndentBlanklineContextChar', { fg = '#ffffff' })
--- set_hl(0, 'IndentBlanklineContextStart', {fg='#ffffff', underline=true})
-set_hl(0, '@comment', { link = 'Comment' })
-set_hl(0, '@none', { bg = 'NONE', fg = 'NONE' })
-set_hl(0, '@preproc', { link = 'PreProc' })
-set_hl(0, '@define', { link = 'Define' })
-set_hl(0, '@operator', { link = 'Operator' })
-set_hl(0, '@punctuation.delimiter', { link = 'Delimiter' })
-set_hl(0, '@punctuation.bracket', { link = 'Delimiter' })
-set_hl(0, '@punctuation.special', { link = 'Delimiter' })
-set_hl(0, '@string', { link = 'String' })
-set_hl(0, '@string.regex', { link = 'String' })
-set_hl(0, '@string.escape', { link = 'SpecialChar' })
-set_hl(0, '@string.special', { link = 'SpecialChar' })
-set_hl(0, '@character', { link = 'Character' })
-set_hl(0, '@character.special', { link = 'SpecialChar' })
-set_hl(0, '@boolean', { link = 'Boolean' })
-set_hl(0, '@number', { link = 'Number' })
-set_hl(0, '@float', { link = 'Float' })
-set_hl(0, '@function', { link = 'Function' })
-set_hl(0, '@function.call', { link = 'Function' })
-set_hl(0, '@function.builtin', { link = 'Special' })
-set_hl(0, '@function.macro', { link = 'Macro' })
-set_hl(0, '@method', { link = 'Function' })
-set_hl(0, '@method.call', { link = 'Function' })
-set_hl(0, '@constructor', { link = 'Special' })
-set_hl(0, '@parameter', { link = 'Identifier' })
-set_hl(0, '@keyword', { link = 'Keyword' })
-set_hl(0, '@keyword.function', { link = 'Keyword' })
-set_hl(0, '@keyword.return', { link = 'Keyword' })
-set_hl(0, '@conditional', { link = 'Conditional' })
-set_hl(0, '@repeat', { link = 'Repeat' })
-set_hl(0, '@debug', { link = 'Debug' })
-set_hl(0, '@label', { link = 'Label' })
-set_hl(0, '@include', { link = 'Include' })
-set_hl(0, '@exception', { link = 'Exception' })
-set_hl(0, '@type', { link = 'Type' })
-set_hl(0, '@type.builtin', { link = 'Type' })
-set_hl(0, '@type.qualifier', { link = 'Type' })
-set_hl(0, '@type.definition', { link = 'Typedef' })
-set_hl(0, '@storageclass', { link = 'StorageClass' })
-set_hl(0, '@attribute', { link = 'PreProc' })
-set_hl(0, '@field', { link = 'Identifier' })
-set_hl(0, '@property', { link = 'Identifier' })
-set_hl(0, '@variable', { link = 'Identifier' })
-set_hl(0, '@variable.builtin', { link = 'Special' })
-set_hl(0, '@constant', { link = 'Constant' })
-set_hl(0, '@constant.builtin', { link = 'Special' })
-set_hl(0, '@constant.macro', { link = 'Define' })
-set_hl(0, '@namespace', { link = 'Include' })
-set_hl(0, '@symbol', { link = 'Identifier' })
-set_hl(0, '@text', { link = 'Normal' })
-set_hl(0, '@text.title', { link = 'Title' })
-set_hl(0, '@text.literal', { link = 'String' })
-set_hl(0, '@text.uri', { link = 'Underlined' })
-set_hl(0, '@text.math', { link = 'Special' })
-set_hl(0, '@text.environment', { link = 'Macro' })
-set_hl(0, '@text.environment.name', { link = 'Type' })
-set_hl(0, '@text.reference', { link = 'Constant' })
-set_hl(0, '@text.todo', { link = 'Todo' })
-set_hl(0, '@text.todo.unchecked', { link = 'Todo' })
-set_hl(0, '@text.todo.checked', { link = 'Done' })
-set_hl(0, '@text.note', { link = 'SpecialComment' })
-set_hl(0, '@text.warning', { link = 'WarningMsg' })
-set_hl(0, '@text.danger', { link = 'ErrorMsg' })
-set_hl(0, '@text.diff.add', { link = 'diffAdded' })
-set_hl(0, '@text.diff.delete', { link = 'diffRemoved' })
-set_hl(0, '@tag', { link = 'Tag' })
-set_hl(0, '@tag.attribute', { link = 'Identifier' })
-set_hl(0, '@tag.delimiter', { link = 'Delimiter' })
-set_hl(0, '@text.strong', { bold = true })
-set_hl(0, '@text.strike', { strikethrough = true })
-set_hl(0, '@text.emphasis', { italic = true })
-set_hl(0, '@text.underline', { underline = true })
-set_hl(0, '@keyword.operator', { link = 'Operator' })
+local n_colors = #colors
+local async
+local function set_colors()
+  local set_hl = vim.api.nvim_set_hl
+  for i = 1, n_colors do
+    set_hl(0, colors[i][1], colors[i][2])
+  end
+
+  async:close()
+end
+
+async = vim.loop.new_async(vim.schedule_wrap(set_colors))
